@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Website</title>
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+    <style>
+        body{background-color: rgb(235, 228, 185);}
+        p{
+            color: rgb(0, 0, 0);
+            font-size : 20px;
+            font-family: Comic Sans MS;
+            
+        }
+        h1{
+            color:rgb(91, 49, 1);
+            font-family: Comic Sans MS;
+        }
+        a:hover {
+            color: rgb(255, 0, 0);
+        }
+
+    </style>
+        
+</head>
+<body onload="startTime()">
+    <audio controls autoplay autoplay hidden>
+        <source src="bgm.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio><br>
+
+    <h1>Biosketch</h1>
+
+    <div style = "float:left"><img src="snoopy.png" alt="Trulli" width="240" height="240"></div>
+    
+    <div style = "float:left">
+        <p>
+
+            
+            Yun-Hwa Tsou is a 19-year-old college student from NTU. She majors in <a href="https://web.ee.ntu.edu.tw/">Electrical Engineering</a>.<br>
+            She graduated from <a href="https://www.fg.tp.edu.tw/">Taipei First Girls High School</a>.
+            <br>Her hobbies includes: <br>
+            - <a href="https://www.youtube.com/watch?v=KVRI5Ud9Re4">playing piano</a><br>
+            - <a href="https://www.vogue.com.tw/entertainment/article/25-21-review">watching K-dramas</a><br>
+            - <a href="https://www.homequestionsanswered.com/what-are-handicrafts.htm">handicrafts making</a><br>
+        </p>
+    </div>
+    <div style="clear:both;"></div>
+    <p id="txt"></p>
+
+        <script>
+        function startTime() {
+        const today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+        let mo = today.getMonth();
+        let d = today.getDate();
+        let y = today.getYear();
+        y = Number(y)+1900;
+        mo = Number(mo)+1;
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML =  mo + "-" + d + "-" + y + " " + h + ":" + m + ":" + s
+        setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+        }
+        </script>
+
+    
+
+</body>
+</html>
